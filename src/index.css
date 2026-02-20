@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ATS Recruitment Platform - Design System
+   Clean, professional aesthetic for HR/recruitment tools
+   Inspired by modern ATS like Lever and Greenhouse
+*/
+
+@layer base {
+  :root {
+    /* Core neutrals - Warm slate for professionalism */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Popover/dropdown */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Vibrant green from reference */
+    --primary: 102 54% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft gray-blue */
+    --secondary: 215 28% 93%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted surfaces */
+    --muted: 215 25% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Teal for actions */
+    --accent: 173 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success - Green for positive states */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Info - Blue */
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Pipeline stage colors */
+    --stage-postulado: 215 16% 63%;
+    --stage-cv-revisado: 213 94% 68%;
+    --stage-entrevista: 262 83% 68%;
+    --stage-evaluaciones: 43 96% 56%;
+    --stage-cliente: 27 96% 61%;
+    --stage-finalista: 142 69% 58%;
+    --stage-contratado: 142 71% 45%;
+
+    /* Status colors for vacancies */
+    --status-borrador: 215 16% 63%;
+    --status-publicada: 142 76% 36%;
+    --status-pausada: 38 92% 50%;
+    --status-archivada: 215 16% 47%;
+    --status-cerrada: 234 89% 54%;
+
+    /* Priority colors */
+    --priority-baja: 215 16% 63%;
+    --priority-media: 213 94% 68%;
+    --priority-alta: 27 96% 61%;
+    --priority-urgente: 0 84% 60%;
+
+    /* Borders and inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 234 89% 54%;
+
+    --radius: 0.625rem;
+
+    /* Sidebar - Very dark navy/blue */
+    --sidebar-background: 230 60% 10%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 102 54% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 40% 18%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 222 40% 20%;
+    --sidebar-ring: 102 54% 47%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 234 89% 64%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 40% 18%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 222 40% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 173 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 222 40% 20%;
+    --input: 222 40% 20%;
+    --ring: 234 89% 64%;
+
+    --sidebar-background: 230 60% 8%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 102 54% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 40% 14%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 222 40% 15%;
+    --sidebar-ring: 102 54% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  /* Status badge utilities */
+  .status-borrador {
+    @apply bg-muted text-muted-foreground;
+  }
+  
+  .status-publicada {
+    @apply bg-success/10 text-success;
+  }
+  
+  .status-pausada {
+    @apply bg-warning/10 text-warning;
+  }
+  
+  .status-archivada {
+    @apply bg-muted text-muted-foreground;
+  }
+  
+  .status-cerrada {
+    @apply bg-primary/10 text-primary;
+  }
+
+  /* Priority utilities */
+  .priority-baja {
+    @apply bg-muted text-muted-foreground;
+  }
+  
+  .priority-media {
+    @apply bg-info/10 text-info;
+  }
+  
+  .priority-alta {
+    @apply bg-warning/10 text-warning;
+  }
+  
+  .priority-urgente {
+    @apply bg-destructive/10 text-destructive;
+  }
+
+  /* Kanban card animation */
+  .kanban-card {
+    @apply transition-all duration-200 ease-out;
+  }
+  
+  .kanban-card:hover {
+    @apply shadow-lg -translate-y-0.5;
+  }
+
+  /* Smooth scrolling for kanban */
+  .kanban-scroll {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+  }
+
+  .kanban-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .kanban-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .kanban-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  .kanban-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+/* Custom animations */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
