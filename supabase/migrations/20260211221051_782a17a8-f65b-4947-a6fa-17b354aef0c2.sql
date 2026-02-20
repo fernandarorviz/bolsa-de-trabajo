@@ -1,0 +1,1 @@
+ALTER TABLE public.vacancy_templates ADD COLUMN cliente_id UUID REFERENCES public.clientes(id);
